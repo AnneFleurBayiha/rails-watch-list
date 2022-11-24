@@ -5,5 +5,3 @@ class Movie < ApplicationRecord
   validates :overview, presence: true
 end
 
-
-# A movie must have a unique title and an overview.
