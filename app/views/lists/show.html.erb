@@ -5,7 +5,7 @@
 
 <ul>
   <% @list.movies.each do |movie| %>
-    <li><strong><%= movie.title %></strong></li>
+    <li><strong><%= movie.title %></strong><%= button_to "Remove",new_list_bookmark_path(@list), data: {turbo_method: :delete, turbo_confirm: "Do you really want to remove this movie from the list?"} %></li>
     <li><img src="<%= movie.poster_url %>" alt="movie poster" width="200px"></li>
     <li><%= movie.overview %></li>
     <li><%= movie.rating %></li>
@@ -13,5 +13,9 @@
 </ul>
 
 
-<%= link_to "Back", lists_path  %>
-<%= link_to "Bookmark", new_list_bookmark_path(@list) %>
+<%= link_to "Back|", lists_path  %>
+<%= link_to "Add a Movie", new_list_bookmark_path(@list) %>
+
+
+
+
