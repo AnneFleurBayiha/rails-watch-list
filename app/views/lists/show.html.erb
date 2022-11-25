@@ -11,10 +11,11 @@
     <li><img src="<%= bookmark.movie.poster_url %>" alt="movie poster" width="200px"></li>
     <li><%= bookmark.movie.overview %></li>
     <li><%= bookmark.movie.rating %></li>
+    <p>Comments</p>
     <li><%= bookmark.comment %></li>
   <% end %>
 </ul>
 
 
-<%= link_to "Back|", lists_path  %>
+<%= link_to "Back|", list_path(@list)  %>
 <%= link_to "Add a Movie", new_list_bookmark_path(@list) %>
