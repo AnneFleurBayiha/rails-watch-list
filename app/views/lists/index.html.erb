@@ -3,8 +3,10 @@
 <ul>
   <% @lists.each do |list| %>
     <li><%= link_to list.name, list_path(list) %></li>
+    <% if list.photo.attached? %>
+      <%= cl_image_tag list.photo.key %>
+    <% end %>
   <% end %>
 </ul>
 
 <%= link_to "Add a list", new_list_path %>
-
