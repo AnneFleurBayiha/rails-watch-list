@@ -23,19 +23,11 @@ class BookmarksController < ApplicationController
     redirect_to list_path(@bookmark.list), status: :see_other
   end
 
-  end
 
-   private
+  private
 
   def bookmark_params
     params.require(:bookmark).permit(:comment, :movie_id)
   end
 
-end
-
-
-def destroy
-  @student_tag = StudentTag.find(params[:id])
-  @student_tag.destroy
-  redirect_to team_path(@student_tag.student.team), status: :see_other
 end
