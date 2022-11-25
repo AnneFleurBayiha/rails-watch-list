@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   root to: 'lists#index'
   resources :lists do
-    resources :bookmarks, only: [:new, :create, :destroy]
+    resources :bookmarks, only: [:new, :create]
   end
+  resources :bookmarks, only: [:destroy]
 end
 
 # As a user, I can see all my movie lists
